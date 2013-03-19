@@ -13,5 +13,9 @@ var Noted = {
                 self.reset(resp.rows);
             });    
         }
+    }),
+    CouchModel: Backbone.Model.extend({
+        url: function () { return Noted.Config.Urls.CouchDb + "/" + (this.isNew() ? "" : this.id); },
+        idAttribute: "_id"
     })
 };
