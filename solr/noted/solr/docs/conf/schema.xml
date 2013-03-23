@@ -136,9 +136,11 @@
    <!-- catchall text field that indexes tokens both normally and in reverse for efficient
         leading wildcard queries. -->
    <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
-   
+      
    <field name="_version_" type="long" indexed="true" stored="true" multiValued="false" />
-   
+
+   <dynamicField name="ignored_*" type="ignored" multiValued="true"/>   
+      
  </fields>
 
 
