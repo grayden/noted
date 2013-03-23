@@ -3,7 +3,8 @@ var Noted = {
         Urls: { 
             CollectionsSource: "endpoints/couchEndpoint.php?request=_design/collections/_view/collections",
             TagsSource: "endpoints/couchEndpoint.php?request=_design/collections/_view/collections",
-            CouchDb: "endpoints/couchEndpoint.php"
+            CouchDb: "endpoints/couchEndpoint.php",
+            SolrOriginals: "endpoints/solrEndpoint.php"
         }
     },
     CouchCollection: Backbone.Collection.extend({
@@ -17,5 +18,5 @@ var Noted = {
     CouchModel: Backbone.Model.extend({
         url: function () { return Noted.Config.Urls.CouchDb + "/" + (this.isNew() ? "" : this.id); },
         idAttribute: "_id"
-    })
+    }),
 };
