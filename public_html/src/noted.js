@@ -1,8 +1,8 @@
 var Noted = {
+    App: {},
     Config: {
         Urls: { 
-            CollectionsSource: "endpoints/couchEndpoint.php?request=_design/collections/_view/collections",
-            TagsSource: "endpoints/couchEndpoint.php?request=_design/collections/_view/collections",
+            GroupingsSource: "endpoints/couchEndpoint.php?request=_design/groupings/_view/groupings",
             CouchDb: "endpoints/couchEndpoint.php",
             SolrOriginals: "endpoints/solrEndpoint.php"
         }
@@ -19,4 +19,11 @@ var Noted = {
         url: function () { return Noted.Config.Urls.CouchDb + "/" + (this.isNew() ? "" : this.id); },
         idAttribute: "_id"
     }),
+    
+    init: function () {
+        this.App.results = new Noted.GroupingCollection();
+        this.App.appView = new Noted.AppView();
+        this.App.router = new Noted.Router();
+        Backbone.history.start();
+    }
 };

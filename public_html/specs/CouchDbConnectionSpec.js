@@ -3,8 +3,8 @@ describe("CouchDb Connection", function () {
     var testCollection;
     
     beforeEach(function () {
-        testModel = new Noted.TagModel();
-        testCollection = new Noted.TagCollection();
+        testModel = new Noted.GroupingModel();
+        testCollection = new Noted.GroupingCollection();
     });
     
     afterEach(function () {
@@ -27,7 +27,7 @@ describe("CouchDb Connection", function () {
     });
     
     it("should be able to fetch one document", function () {
-        var testModel2 = new Noted.TagModel();
+        var testModel2 = new Noted.GroupingModel();
         
         runs(function () {
             testModel.save('Test', 'Test').done(function (resp) {

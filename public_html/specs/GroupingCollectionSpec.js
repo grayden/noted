@@ -1,8 +1,8 @@
-describe("Noted.CollectionCollection", function () {
+describe("Noted.GroupingCollection", function () {
    var collection;
    
    beforeEach(function () {
-      collection = new Noted.CollectionCollection(); 
+      collection = new Noted.GroupingCollection(); 
    });
    
    afterEach(function () {
@@ -19,7 +19,7 @@ describe("Noted.CollectionCollection", function () {
        }, 500);
        
        runs(function () {
-           expect(collection.length).toBe(2);
+           expect(collection.length).toBe(5);
        });
    });
 });

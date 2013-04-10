@@ -1,8 +1,8 @@
-describe("Noted.CollectionModel", function () {
+describe("Noted.GroupingModel", function () {
    var model;
    
    beforeEach(function () {
-      model = new Noted.CollectionModel(); 
+      model = new Noted.GroupingModel(); 
    });
    
    afterEach(function () {

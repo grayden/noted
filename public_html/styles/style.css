@@ -1,0 +1,31 @@
+#app-view {
+    display: -webkit-flex;
+}
+
+#app-view #result-viewer {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    border: solid black 1px;
+    -webkit-flex: 4;
+    height: 99%;
+}
+
+#app-view #content-viewer {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;    
+    border: solid black 1px;
+    -webkit-flex: 7;
+    height: 99%;
+}
+
+#result-viewer #search-tool-container {
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    height: 70px;
+}
+
+#result-viewer #results-container {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-align-self: stretch;
+}
