@@ -43,7 +43,11 @@
         </script>
         
         <script type="text/html" id="grouping-view-template">
-            <%=grouping.get('name')%>
+            <div class="grouping-title"><%=grouping.get('name')%></div>
+            <div class="grouping-counts">
+                <div class="match-count-box">Matches: <span class="match-count">x</span></div>
+                <div class="records-count-box">Records: <span class="record-count"><%=grouping.get('recordCount')%></span></div>
+            </div>
         </script>
         
         <script type="text/javascript">
