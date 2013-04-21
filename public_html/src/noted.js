@@ -11,7 +11,7 @@ var Noted = {
         fetch: function () {
             var self = this;
             $.ajax(this.CouchSource).done(function (resp) {
-                self.reset(resp.rows);
+                self.reset(_.pluck(resp.rows, "value"));
             });    
         }
     }),

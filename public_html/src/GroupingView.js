@@ -4,7 +4,7 @@ Noted.GroupingView = Backbone.View.extend({
     
     initialize: function (options) {
         
-        this.result = options.result;
+        this.grouping = options.grouping;
         
         this.template = _.template($(this.template).html());
     },

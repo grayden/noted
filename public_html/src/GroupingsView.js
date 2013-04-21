@@ -3,17 +3,17 @@ Noted.GroupingsView = Backbone.View.extend({
     
     initialize: function () {
         this.groupings = Noted.App.groupings;
-        this.listenTo(this.groupings, 'reset', this.render);
+        this.groupingViews = [];
+        this.listenTo(this.groupings, 'reset', this.renderAllGroupings);
     },
     
     render: function () {
         this.$el.empty();
-        this.renderAllGroupings();
         return this;
     },
     
     createGroupingsView: function () {
-        this.groupingView = this.groupings.map(function (result) { return new Noted.GroupingView({result: result});});
+        this.groupingViews = this.groupings.map(function (grouping) { return new Noted.GroupingView({grouping: grouping});});
     },
     
     renderAllGroupings: function () {

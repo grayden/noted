@@ -1,5 +1,5 @@
 Noted.GroupingCollection = Noted.CouchCollection.extend({
-    Model: Noted.CollectionModel,
+    Model: Noted.GroupingModel,
     url: Noted.Config.Urls.CouchDb,
-    CouchSource: Noted.Config.Urls.GroupingsSource
+    CouchSource: Noted.Config.Urls.GroupingsSource    
 });
