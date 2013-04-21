@@ -13,9 +13,9 @@
         <script type="text/javascript" src="src/OriginalCollection.js"></script>
 
         
-        <script type="text/javascript" src="src/ResultView.js"></script>
+        <script type="text/javascript" src="src/GroupingView.js"></script>
         <script type="text/javascript" src="src/SearchToolView.js"></script>
-        <script type="text/javascript" src="src/ResultsView.js"></script>
+        <script type="text/javascript" src="src/GroupingsView.js"></script>
         <script type="text/javascript" src="src/AppView.js"></script>
 
         <script type="text/javascript" src="src/Router.js"></script>
@@ -29,14 +29,14 @@
             </div>
         </script>
         
-        <script type="text/html" id="result-view-template">
-            <%=result.get('value').collection%>
+        <script type="text/html" id="grouping-view-template">
+            <%=grouping.get('value').collection%>
         </script>
         
         <script type="text/javascript">
             $(function () {
                 Noted.init();
-                Noted.App.results.fetch();
+                Noted.App.groupings.fetch();
             });
         </script>
     </head>

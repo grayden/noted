@@ -1,5 +1,7 @@
 #app-view {
     display: -webkit-flex;
+    -webkit-align-items: stretch;
+    height: 100%;
 }
 
 #app-view #result-viewer {
@@ -7,7 +9,6 @@
     -webkit-flex-direction: column;
     border: solid black 1px;
     -webkit-flex: 4;
-    height: 99%;
 }
 
 #app-view #content-viewer {
@@ -15,17 +16,16 @@
     -webkit-flex-direction: column;    
     border: solid black 1px;
     -webkit-flex: 7;
-    height: 99%;
 }
 
 #result-viewer #search-tool-container {
     display: -webkit-flex;
     -webkit-align-items: center;
-    height: 70px;
+    -webkit-flex: 1;
 }
 
-#result-viewer #results-container {
+#result-viewer #groupings-container {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
-    -webkit-align-self: stretch;
+    -webkit-flex: 6;
 }

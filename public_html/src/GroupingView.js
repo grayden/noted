@@ -1,6 +1,6 @@
-Noted.ResultView = Backbone.View.extend({
-    template: '#result-view-template',
-    className: 'result',
+Noted.GroupingView = Backbone.View.extend({
+    template: '#grouping-view-template',
+    className: 'grouping-box',
     
     initialize: function (options) {
         
@@ -10,8 +10,7 @@ Noted.ResultView = Backbone.View.extend({
     },
     
     render: function () {
-        console.log(this.result);
-        this.$el.html(this.template({result: this.result}));
+        this.$el.html(this.template({grouping: this.grouping}));
         return this;  
     }
 });

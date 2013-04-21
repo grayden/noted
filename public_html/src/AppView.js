@@ -10,7 +10,7 @@ Noted.AppView = Backbone.View.extend({
     
     setupViews: function () {
         this.searchToolView = new Noted.SearchToolView();
-        this.resultsView = new Noted.ResultsView();
+        this.groupingsView = new Noted.GroupingsView();
     },
     
     render: function () {
@@ -18,7 +18,7 @@ Noted.AppView = Backbone.View.extend({
         
         this.$('#result-viewer').empty();
         this.$('#result-viewer').append(this.searchToolView.render().el);
-        this.$('#result-viewer').append(this.resultsView.render().el);
+        this.$('#result-viewer').append(this.groupingsView.render().el);
         
         return this;
     }
