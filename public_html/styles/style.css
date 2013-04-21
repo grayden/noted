@@ -24,6 +24,7 @@
     -webkit-flex: 1;
     box-shadow: 0px 5px 5px #888;
     min-height: 65px;
+    min-width: 515px;
 }
 
 #result-viewer #search-tool-container #query-builder {
@@ -42,14 +43,10 @@
     -webkit-flex: 1;
 }
 
-#result-viewer #search-tool-container #search-button-container {
-    -webkit-flex: 1;
-}
-
 #result-viewer #groupings-container {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
-    -webkit-flex: 6;
+    -webkit-flex: 10;
     -webkit-justify-content: center;
     overflow-y: auto;
 }
@@ -59,6 +56,7 @@
     height: 150px;
     margin-top: 15px;
     margin-right: 15px;
+    margin-left: 15px;
 }
 
 #result-viewer #groupings-container .grouping-box.collection-grouping-box {
