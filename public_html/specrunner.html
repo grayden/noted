@@ -24,12 +24,26 @@
   <script type="text/javascript" src="src/GroupingCollection.js"></script>
   <script type="text/javascript" src="src/OriginalCollection.js"></script>
   
+  <script type="text/javascript" src="src/GroupingView.js"></script>
+
+    <script type="text/html" id="grouping-view-template">
+      <div class="grouping-title"><%=grouping.get('name')%></div>
+      <div class="grouping-counts">
+          <div class="match-count-box">Matches: <span class="match-count">x</span></div>
+          <div class="records-count-box">Records: <span class="record-count"><%=grouping.get('recordCount')%></span></div>
+      </div>
+      <div class="grouping-results">       
+      </div>
+      <div class="add-record-container">+</div>
+  </script>
+  
   
   <!-- include spec files here... -->
   <script type="text/javascript" src="specs/CouchDbConnectionSpec.js"></script>
   <script type="text/javascript" src="specs/GroupingModelSpec.js"></script>
   <script type="text/javascript" src="specs/GroupingCollectionSpec.js"></script>
   <script type="text/javascript" src="specs/OriginalCollectionSpec.js"></script>
+  <script type="text/javascript" src="specs/GroupingViewSpec.js"></script>
   
   <script type="text/javascript">
     (function() {

@@ -19,7 +19,7 @@ describe("Noted.GroupingCollection", function () {
        }, 500);
        
        runs(function () {
-           expect(collection.length).toBe(5);
+           expect(collection.length).toBe(7);
        });
    });
 });
