@@ -22,10 +22,32 @@
     display: -webkit-flex;
     -webkit-align-items: center;
     -webkit-flex: 1;
+    box-shadow: 0px 5px 5px #888;
 }
 
 #result-viewer #groupings-container {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     -webkit-flex: 6;
+    -webkit-justify-content: center;
+    overflow-y: auto;
+}
+
+#result-viewer #groupings-container .grouping-box {
+    width: 40%;
+    height: 150px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+#result-viewer #groupings-container .grouping-box.collection-grouping-box {
+    background-color: green;
+}    
+
+#result-viewer #groupings-container .grouping-box.tag-grouping-box {
+    background-color: blue;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
