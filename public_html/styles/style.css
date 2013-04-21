@@ -69,11 +69,11 @@
 }
 
 #result-viewer #groupings-container .grouping-box.collection-grouping-box {
-    background-color: green;
+    background-color: #81A673;
 }    
 
 #result-viewer #groupings-container .grouping-box.tag-grouping-box {
-    background-color: blue;
+    background-color: #A67381;
 }
 
 ::-webkit-scrollbar {
