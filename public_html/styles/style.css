@@ -13,16 +13,37 @@
 
 #app-view #content-viewer {
     display: -webkit-flex;
-    -webkit-flex-direction: column;    
+    -webkit-flex-direction: column;  
     border: solid black 1px;
     -webkit-flex: 7;
 }
 
 #result-viewer #search-tool-container {
     display: -webkit-flex;
-    -webkit-align-items: center;
+    -webkit-flex-direction: column;
     -webkit-flex: 1;
     box-shadow: 0px 5px 5px #888;
+    min-height: 65px;
+}
+
+#result-viewer #search-tool-container #query-builder {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex: 2;
+    overflow: hidden;
+}
+
+#result-viewer #search-tool-container #query-builder div {
+    -webkit-flex: 1;
+    text-align: center;
+}
+
+#result-viewer #search-tool-container #result-type-selector {
+    -webkit-flex: 1;
+}
+
+#result-viewer #search-tool-container #search-button-container {
+    -webkit-flex: 1;
 }
 
 #result-viewer #groupings-container {
