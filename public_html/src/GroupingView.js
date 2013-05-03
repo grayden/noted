@@ -5,17 +5,22 @@ Noted.GroupingView = Backbone.View.extend({
     
     events: {
         'click .add-record-container i': 'openAddRecordMenu',
-        'click .add-record-widget': 'closeAddRecordMenu'
+        'click .add-record-widget': 'closeAddRecordMenu',
+        'click .add-record-widget input': 'stopPropagation'
     },
     
     openAddRecordMenu: function () {
-        this.$('.add-record-widget').animate({height: '100px'}, 100);
+        this.$('.add-record-widget').show(100);
     },
     
     closeAddRecordMenu: function () {
-        this.$('.add-record-widget').animate({height: '0px'}, 100);
+        this.$('.add-record-widget').hide();
     },
     
+    stopPropagation: function (e) {
+        e.stopPropagation();
+    },
+
     initialize: function (options) {
         
         this.grouping = options.grouping;
@@ -38,6 +43,7 @@ Noted.GroupingView = Backbone.View.extend({
     render: function () {     
         this.$el.html(this.template({grouping: this.grouping}));
         this.domGroupingType();
+        this.closeAddRecordMenu();
         return this;  
     }
 });

@@ -45,20 +45,34 @@
         <script type="text/html" id="grouping-view-collection-template">
             <div class="grouping-title"><%=grouping.get('name')%></div>
             <div class="grouping-counts">
-                <div class="match-count-box">Matches: <span class="match-count">x</span></div>
-                <div class="records-count-box">Records: <span class="record-count"><%=grouping.get('recordCount')%></span></div>
+                <div class="match-count-box">
+                    Matches: <span class="match-count">x</span>
+                </div>
+                <div class="records-count-box">
+                    Records: <span class="record-count"><%=grouping.get('recordCount')%></span>
+                </div>
             </div>
             <div class="grouping-results">
             </div>
             <div class="add-record-container"><i>+</i></div>
-            <div class="add-record-widget"></div>
+            <div class="add-record-widget">
+                <form action="endpoints/fileUpload.php" method="post" enctype="multipart/form-data">
+                    Name: <input type="text" name="name" /><br />
+                    Source: <input type="text" name="source" /><br />
+                    <input type="file" name="file"><input type="submit" value="Add" />       
+                </form>
+            </div>
         </script>
 
         <script type="text/html" id="grouping-view-tag-template">
             <div class="grouping-title"><%=grouping.get('name')%></div>
             <div class="grouping-counts">
-                <div class="match-count-box">Matches: <span class="match-count">x</span></div>
-                <div class="records-count-box">Records: <span class="record-count"><%=grouping.get('recordCount')%></span></div>
+                <div class="match-count-box">
+                    Matches: <span class="match-count">x</span>
+                </div>
+                <div class="records-count-box">
+                    Records: <span class="record-count"><%=grouping.get('recordCount')%></span>
+                </div>
             </div>
             <div class="grouping-results">
             </div>

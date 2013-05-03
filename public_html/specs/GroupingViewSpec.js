@@ -65,6 +65,27 @@ describe("Noted.GroupingView", function () {
 
         jasmine.Clock.tick(100000);
 
-        expect(collectionView.$('.add-record-widget').outerHeight()).toBe(100);
+        expect(collectionView.$('.add-record-widget').css('display')).not.toBe('none');
+    });
+
+    it("should hide the add record widget when clicking inside of it", function () {
+        var collectionView = new Noted.GroupingView({grouping: fakeCollection});
+        collectionView.render();
+
+        collectionView.$('.add-record-container i').click();
+
+        jasmine.Clock.tick(100000);
+
+        expect(collectionView.$('.add-record-widget').css('display')).not.toBe('none');
+
+        collectionView.$('.add-record-widget input:eq(0)').click();
+        jasmine.Clock.tick(100000);
+
+        expect(collectionView.$('.add-record-widget').css('display')).toBe('block');
+
+        collectionView.$('.add-record-widget').click();
+        jasmine.Clock.tick(100000);
+
+        expect(collectionView.$('.add-record-widget').css('display')).toBe('none');
     });
 });
