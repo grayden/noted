@@ -50,7 +50,8 @@
     -webkit-flex-wrap: wrap;
     -webkit-flex: 10;
     -webkit-justify-content: center;
-    overflow: auto;
+    overflow: scroll;
+    max-height: 660px;
 }
 
 #result-viewer #groupings-container .grouping-box {
@@ -102,10 +103,14 @@
     cursor: pointer;
 }
 
-#result-viewer #groupings-container .grouping-box.tag-grouping-box .add-record-container {
-    display: none;
+#result-viewer #groupings-container .grouping-box .add-record-widget {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    z-index: 2;
+    background-color: white;
 }
-
 
 ::-webkit-scrollbar {
     width: 0px;

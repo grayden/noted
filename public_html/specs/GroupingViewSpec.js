@@ -31,6 +31,8 @@ describe("Noted.GroupingView", function () {
                 return domToCheck.hasClass(classToHave);
             }
         });
+
+        jasmine.Clock.useMock();
     });
     
     it("should have the class connected to its grouping type", function () {
@@ -42,5 +44,27 @@ describe("Noted.GroupingView", function () {
         
         expect(tagView.$el).hasClass('tag-grouping-box');
         expect(collectionView.$el).hasClass('collection-grouping-box');
+    });
+    
+    it("should only have add record widget if it is a collection", function () {
+        var tagView = new Noted.GroupingView({grouping: fakeTag});
+        var collectionView = new Noted.GroupingView({grouping: fakeCollection});
+        
+        tagView.render();
+        collectionView.render();
+        
+        expect(tagView.$('.add-record-widget').length).toBe(0);
+        expect(collectionView.$('.add-record-widget').length).toBe(1);
+    });
+
+    it("should show add record widget after a few mili seconds", function () {
+        var collectionView = new Noted.GroupingView({grouping: fakeCollection});
+        collectionView.render();
+
+        collectionView.$('.add-record-container i').click();
+
+        jasmine.Clock.tick(100000);
+
+        expect(collectionView.$('.add-record-widget').outerHeight()).toBe(100);
     });
 });

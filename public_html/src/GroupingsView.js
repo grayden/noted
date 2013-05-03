@@ -21,7 +21,8 @@ Noted.GroupingsView = Backbone.View.extend({
         _.each(this.groupingViews, function (groupingView) {
             this.$el.append(groupingView.render().el);
         }, this);
-        if (this.groupingViews.length % 2 != 0)
-            this.$el.append(_.template('<div class="grouping-box"></div>'))
+        
+        if (this.groupingViews.length % 2 !== 0)
+            this.$el.append(_.template('<div class="grouping-box"></div>'));
     }
 });
