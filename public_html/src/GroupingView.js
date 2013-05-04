@@ -6,7 +6,8 @@ Noted.GroupingView = Backbone.View.extend({
     events: {
         'click .add-record-container i': 'openAddRecordMenu',
         'click .add-record-widget': 'closeAddRecordMenu',
-        'click .add-record-widget input': 'stopPropagation'
+        'click .add-record-widget input': 'stopPropagation',
+        'click .load-file-trigger': 'uploadFile'
     },
     
     openAddRecordMenu: function () {
@@ -19,6 +20,14 @@ Noted.GroupingView = Backbone.View.extend({
     
     stopPropagation: function (e) {
         e.stopPropagation();
+    },
+
+    uploadFile: function () {
+        var formData = this.$('form').serializeArray();
+        $.post( Noted.Config.Urls.SolrCreate, formData)
+        .done(function (resp) {
+            console.log(resp);
+        })
     },
 
     initialize: function (options) {

@@ -56,12 +56,14 @@
             </div>
             <div class="add-record-container"><i>+</i></div>
             <div class="add-record-widget">
-                <form action="endpoints/fileUpload.php" method="post" enctype="multipart/form-data">
+                <form action="endpoints/fileUpload.php" method="post" enctype="multipart/form-data" target="upload_file_frame">
+                    <input type="hidden" name="collection" value="<%=grouping.get('name')%>"/>
                     Name: <input type="text" name="name" /><br />
                     Source: <input type="text" name="source" /><br />
-                    <input type="file" name="file"><input type="submit" value="Add" />       
+                    <input type="file" name="file"><input type="button" value="Add" class="load-file-trigger"/>       
                 </form>
             </div>
+            <iframe name="upload_file_frame" frameborder="0" height="0" width="0"></iframe>
         </script>
 
         <script type="text/html" id="grouping-view-tag-template">

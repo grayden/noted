@@ -4,7 +4,8 @@ var Noted = {
         Urls: { 
             GroupingsSource: "endpoints/couchEndpoint.php?request=_design/groupings/_view/groupings",
             CouchDb: "endpoints/couchEndpoint.php",
-            SolrOriginals: "endpoints/solrEndpoint.php"
+            SolrOriginals: "endpoints/solrEndpoint.php",
+            SolrCreate: "endpoints/createSolrDocumentInCollection.php"
         }
     },
     CouchCollection: Backbone.Collection.extend({

@@ -3,19 +3,18 @@
 
 	$topSolrId = getTopSolrID();
 	$id = $topSolrId + 1;
+	$_POST["id"] = $id;
 
-	$fileName = $_FILES['file']['tmp_name'];
-	$url = "http://localhost:8983/solr/docs/update/extract?literal.id=$id&commit=true";
-	$fileParam = array("myfile" => "@$fileName", 
-		"literal.collection" => $_POST["collection"], 
-		"literal.source" => $_POST["source"],
-		"literal.name" => $_POST["name"]
-		);
-	$postFile = curl_init($url);
+	$url = "http://localhost:8983/solr/docs/update?commit=true";
+	$postString = arr_to_solr_doc($_POST);
+	$postFile = curl_init();
 	curl_setopt($postFile, CURLOPT_POST, 1);
-	curl_setopt($postFile, CURLOPT_POSTFIELDS, $fileParam);
+	curl_setopt($postFile, CURLOPT_URL, $url);
+	curl_setopt($postFile, CURLOPT_HTTPHEADER, array("Content-type:text/xml; charset=utf-8"));	
+	curl_setopt($postFile, CURLOPT_POSTFIELDS, $postString);
 	curl_setopt($postFile, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($postFile, CURLOPT_HEADER, 0);
+	curl_setopt($postFile, CURLINFO_HEADER_OUT, 1);
 	$data = curl_exec($postFile);
 	curl_close($postFile);
 
@@ -31,4 +30,12 @@
 		$encodedResp = json_decode($resp);
 		return $encodedResp->response->docs[0]->id;
 	}
+
+	function arr_to_solr_doc($doc){
+			$fields = '';
+			foreach ($doc as $field_name => $value){
+				$fields .= sprintf('<field name="%s">%s</field>',$field_name, $value);
+			}
+			return sprintf('<add><doc>%s</doc></add>',$fields);
+		}
 ?>
