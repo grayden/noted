@@ -5,5 +5,6 @@ Noted.Router = Backbone.Router.extend({
     
     start: function () {
         Noted.App.appView.render();
+        Noted.App.groupings.fetch();
     }
 });

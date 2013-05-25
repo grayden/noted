@@ -12,7 +12,7 @@
     min-width: 518px;
 }
 
-#app-view #content-viewer {
+#app-view #documents-viewer {
     display: -webkit-flex;
     -webkit-flex-direction: column;  
     border: solid black 1px;

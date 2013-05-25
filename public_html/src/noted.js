@@ -22,9 +22,13 @@ var Noted = {
     }),
     
     init: function () {
+
         this.App.groupings = new Noted.GroupingCollection();
         this.App.appView = new Noted.AppView();
         this.App.router = new Noted.Router();
+
         Backbone.history.start();
-    }
+    },
 };
+
+_.extend(Noted, Backbone.Events);

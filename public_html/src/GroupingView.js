@@ -7,14 +7,17 @@ Noted.GroupingView = Backbone.View.extend({
         'click .add-record-container i': 'openAddRecordMenu',
         'click .add-record-widget': 'closeAddRecordMenu',
         'click .add-record-widget input': 'stopPropagation',
-        'click .load-file-trigger': 'uploadFile'
+        'click .load-file-trigger': 'uploadFile',
+        'click': 'triggerGroupingResultsLoad'
     },
     
-    openAddRecordMenu: function () {
+    openAddRecordMenu: function (e) {
+        e.stopPropagation();
         this.$('.add-record-widget').show(100);
     },
     
-    closeAddRecordMenu: function () {
+    closeAddRecordMenu: function (e) {
+        if (e) e.stopPropagation();
         this.$('.add-record-widget').hide();
     },
     
@@ -22,16 +25,24 @@ Noted.GroupingView = Backbone.View.extend({
         e.stopPropagation();
     },
 
-    uploadFile: function () {
+    uploadFile: function (e) {
+        e.stopPropagation();
         var formData = this.$('form').serializeArray();
         $.post( Noted.Config.Urls.SolrCreate, formData)
         .done(function (resp) {
-            console.log(resp);
         })
+    },
+
+    triggerGroupingResultsLoad: function (e)
+    {
+        e.preventDefault();
+        this.grouping.trigger('load', this.grouping);
     },
 
     initialize: function (options) {
         
+        _.bindAll(this, 'triggerGroupingResultsLoad');
+
         this.grouping = options.grouping;
         
         this.chooseTemplateType();
