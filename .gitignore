@@ -1,3 +1,4 @@
 solr/noted/solr/
 solr/noted/solr-webapp/
 *~
+*.swp
